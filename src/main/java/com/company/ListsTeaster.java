@@ -5,8 +5,6 @@ import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 /**
  * Tester of speed of working of add, remove and get methods  for List
  */
