@@ -27,15 +27,22 @@ class ListsTester {
     }
 
     /**
+     * Clear values and capacity if list is array
+     */
+    public void ClearIfArray()
+    {
+        list.clear();
+        if (list instanceof ArrayList)
+            ((ArrayList<String>) list).trimToSize();
+    }
+
+    /**
      * Measurement of the time required
      * to add 'NumberOfElements' items to the end of the list.
      * @return Time spent
      */
     public long testAdd(){
-        list.clear();
-        if (list instanceof ArrayList)
-            ((ArrayList<String>) list).trimToSize();
-
+        ClearIfArray();
         start = Instant.now();
         for (int i = 0; i < NumberOfElements; i++)
             list.add(value);
@@ -52,10 +59,7 @@ class ListsTester {
      * @return Time spent
      */
     public long testAdd(int index){
-        list.clear();
-        if (list instanceof ArrayList)
-            ((ArrayList<String>) list).trimToSize();
-
+        ClearIfArray();
         start = Instant.now();
         for (int i = 0; i < NumberOfElements; i++)
             list.add(index, value);
@@ -70,10 +74,7 @@ class ListsTester {
      * @return Time spent
      */
     public long testAddMiddle(){
-        list.clear();
-        if (list instanceof ArrayList)
-            ((ArrayList<String>) list).trimToSize();
-
+        ClearIfArray();
         start = Instant.now();
         for (int i = 0; i < NumberOfElements; i++)
             list.add(i/2,value);
@@ -173,7 +174,7 @@ class ListsTester {
             fill();
 
         start = Instant.now();
-        for (int i = NumberOfElements -1; i > 0; i--)
+        for (int i = NumberOfElements - 1; i > 0; i--)
             list.remove(i/2);
         end = Instant.now();
 
