@@ -33,6 +33,7 @@ class ListsTester {
      * to add 'NumberOfElements' items to the end of the list.
      * @return Time spent
      */
+
     public long testAdd(){
         list.clear();
         if (list instanceof ArrayList)
