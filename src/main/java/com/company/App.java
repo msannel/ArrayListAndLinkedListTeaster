@@ -3,13 +3,11 @@ package com.company;
 import java.util.*;
 
 /**
- * Основное приложение
- * @author DanilaTerekhov
- * @version 0.0.1
+ * @author Anna Ivanova
  */
 public class App {
     /**
-     * Класс результатов теста
+     * Class of test results
      */
     public static class Results {
 
@@ -17,9 +15,9 @@ public class App {
         String method;
 
         /**
-         * @param timeArr  время теста ArrayList
-         * @param timeLink время теста LinkedList
-         * @param method   описание тестируемого метода
+         * @param timeArr  time of test ArrayList
+         * @param timeLink time of test LinkedList
+         * @param method   Description of tested method
          * @see ListsTester
          */
         public Results(long timeArr, long timeLink, String method) {
@@ -66,6 +64,10 @@ public class App {
         System.out.println("Goodbye!");
     }
 
+    /**
+     * Read the number of tests from console
+     * @return read number
+     */
     private static int getNumberOfTestsFromConsole()
     {
         System.out.println("Enter number of tests (for exit print 0)");
@@ -78,12 +80,17 @@ public class App {
         return Integer.parseInt(_NumberOfTests);
     }
 
-    private static Boolean checkNumberOfTests(String _N)
+    /**
+     * Check if the number is correctly inputted by user
+     * @param _NumberOfTests checked string
+     * @return if the number is inputted correctly
+     */
+    private static Boolean checkNumberOfTests(String _NumberOfTests)
     {
-        if (_N.charAt(0) == '0' && _N.length() > 1) return false;
-        for (int i = 0; i < _N.length(); i++)
+        if (_NumberOfTests.charAt(0) == '0' && _NumberOfTests.length() > 1) return false;
+        for (int i = 0; i < _NumberOfTests.length(); i++)
         {
-            if (!(_N.charAt(i) >= '0' && _N.charAt(i) <= '9')) return false;
+            if (!(_NumberOfTests.charAt(i) >= '0' && _NumberOfTests.charAt(i) <= '9')) return false;
         }
         return true;
     }
